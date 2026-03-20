@@ -41,7 +41,8 @@ jobs:
             ${{ steps.get_diff.outputs.diff_content }}
 
       - name: Post AI review comment
-        run: |
+        run: |Control + Space
+  
           gh pr comment $PR_NUMBER --body "$REVIEW_RESPONSE"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
