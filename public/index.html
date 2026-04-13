@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AGMATIX AI PRO – Professional decentralized agricultural intelligence and marketplace for the Pi Network." />
+  <title>AGMATIX AI PRO | Pi Network Agricultural Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">🌾</span>
+        <span class="logo-text">AGMATIX <span class="accent">AI PRO</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#marketplace">Marketplace</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-outline" id="connectBtn">Connect Pi Wallet</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-badge">Powered by Pi Network</div>
+      <h1 class="hero-title">
+        Decentralized Agricultural<br />
+        Intelligence &amp; Marketplace
+      </h1>
+      <p class="hero-subtitle">
+        AGMATIX AI PRO connects farmers, buyers, and investors on the Pi Network.
+        Access real-time crop analytics, AI-driven price predictions, and a
+        trustless commodity marketplace — all in one platform.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value" id="statFarmers">0</span>
+          <span class="stat-label">Farmers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="statListings">0</span>
+          <span class="stat-label">Listings</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="statVolume">0</span>
+          <span class="stat-label">π Traded</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section features" id="features">
+    <div class="container">
+      <h2 class="section-title">Platform Features</h2>
+      <p class="section-subtitle">Everything you need to thrive in the decentralized agricultural economy.</p>
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Crop Analytics</h3>
+          <p>Machine-learning models forecast yield, detect disease, and recommend optimal planting schedules based on satellite and soil data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛒</div>
+          <h3>Pi Marketplace</h3>
+          <p>Buy and sell agricultural commodities directly using Pi coin. Smart-contract escrow ensures trustless, fair transactions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Price Intelligence</h3>
+          <p>Real-time commodity price feeds combined with AI predictions give farmers and traders a decisive edge in volatile markets.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Portfolio Tracker</h3>
+          <p>Monitor your agricultural holdings, track performance, and export data to CSV or JSON for personal analysis.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Network</h3>
+          <p>Connect with farmers and buyers worldwide. Language support and regional market data break geographic barriers.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure &amp; Decentralized</h3>
+          <p>Built on the Pi Network's open blockchain. No single point of failure. Your data and assets remain fully under your control.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARKETPLACE ===== -->
+  <section class="section marketplace" id="marketplace">
+    <div class="container">
+      <h2 class="section-title">Live Marketplace</h2>
+      <p class="section-subtitle">Sample commodity listings — connect your Pi Wallet to trade.</p>
+      <div class="market-controls">
+        <input type="search" id="marketSearch" class="search-input" placeholder="Search commodities…" aria-label="Search commodities" />
+        <select id="marketFilter" class="filter-select" aria-label="Filter by category">
+          <option value="">All Categories</option>
+          <option value="grain">Grains</option>
+          <option value="vegetable">Vegetables</option>
+          <option value="fruit">Fruits</option>
+          <option value="livestock">Livestock</option>
+        </select>
+      </div>
+      <div class="listings-grid" id="listingsGrid">
+        <!-- Listings injected by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="section-title">My Portfolio</h2>
+      <p class="section-subtitle">Track your holdings and export your data at any time.</p>
+
+      <div class="portfolio-header">
+        <div class="portfolio-value">
+          <span class="label">Total Value</span>
+          <span class="value" id="portfolioValue">– π</span>
+        </div>
+        <div class="export-actions">
+          <button class="btn btn-outline" id="exportCsvBtn">⬇ Export CSV</button>
+          <button class="btn btn-outline" id="exportJsonBtn">⬇ Export JSON</button>
+        </div>
+      </div>
+
+      <div class="portfolio-notice" id="portfolioNotice">
+        <span>🔗</span>
+        <span>Connect your Pi Wallet to see your real portfolio. Sample data is shown below.</span>
+      </div>
+
+      <div class="portfolio-table-wrapper">
+        <table class="portfolio-table" id="portfolioTable">
+          <thead>
+            <tr>
+              <th>Commodity</th>
+              <th>Qty</th>
+              <th>Avg. Buy (π)</th>
+              <th>Current (π)</th>
+              <th>P&amp;L</th>
+              <th>P&amp;L %</th>
+            </tr>
+          </thead>
+          <tbody id="portfolioBody">
+            <!-- Rows injected by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container about-inner">
+      <div class="about-text">
+        <h2 class="section-title left">About AGMATIX AI PRO</h2>
+        <p>
+          AGMATIX AI PRO (Agricultural Matrix AI Professional) is an open-source,
+          community-driven platform that harnesses the power of the Pi Network and
+          artificial intelligence to transform global agricultural markets.
+        </p>
+        <p>
+          Our mission is to give small-scale farmers access to the same data,
+          analytics, and marketplace tools that large agribusinesses enjoy —
+          leveling the playing field and creating a fairer, more efficient
+          agricultural economy.
+        </p>
+        <ul class="about-list">
+          <li>✅ 100% open-source — MIT licensed</li>
+          <li>✅ Non-custodial Pi Network integration</li>
+          <li>✅ AI models trained on global crop &amp; weather data</li>
+          <li>✅ Community governance via Pi consensus</li>
+        </ul>
+      </div>
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="about-card-icon">🌱</div>
+          <div class="about-card-title">v1.0.0</div>
+          <div class="about-card-sub">Initial PiOS Release</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🌾</span>
+        <span>AGMATIX AI PRO</span>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#marketplace">Marketplace</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="https://github.com/johnperez1/AGMATIX-AI-PRO-PIOS" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 AGMATIX AI PRO. MIT License.</div>
+    </div>
+  </footer>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
