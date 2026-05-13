@@ -1,0 +1,23 @@
+{
+  "name": "agmatix-ai-pro-pios",
+  "version": "1.0.0",
+  "description": "Professional decentralized agricultural intelligence and marketplace for the Pi Network",
+  "private": true,
+  "scripts": {
+    "start": "npx serve public",
+    "predeploy": "echo 'Deploying AGMATIX AI PRO...'",
+    "deploy": "gh-pages -d public"
+  },
+  "keywords": [
+    "agriculture",
+    "ai",
+    "pi-network",
+    "marketplace",
+    "decentralized"
+  ],
+  "author": "johnperez1",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
